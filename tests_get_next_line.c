@@ -41,5 +41,6 @@ int	main(int argc, char *argv[])
 		printf("%s", get_next_line(fd));
 		i++;
 	}
+	close(fd);
 	return (0);
 }
