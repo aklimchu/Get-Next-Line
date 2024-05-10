@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+//#include <errno.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -21,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_s = (char *)malloc((totallen + 1) * sizeof(char));
 	if (new_s == NULL)
 		return ((void *)0);
-	while (*s1)
+	while (s1 && *s1)
 	{
 		*new_s = *s1;
 		new_s++;
@@ -42,7 +43,7 @@ size_t	ft_strlen(const char *c)
 	size_t		i;
 
 	i = 0;
-	while (*c)
+	while (c && *c)
 	{
 		i++;
 		c++;
@@ -50,45 +51,12 @@ size_t	ft_strlen(const char *c)
 	return (i);
 }
 
-size_t	checknew(char c, char const *set)
-{
-	size_t	count;
-	
-	count = 0;
-	while (*set && *set != c)
-	{
-		count++;
-		set++;
-	}
-	if (*set == c)
-		count++;
-	return (count);
-}
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	lensrc;
-	size_t	i;
-
-	lensrc = ft_strlen(src);
-	i = 0;
-	if (dstsize == 0)
-		return (lensrc);
-	while (i + 1 < dstsize && (*src))
-	{
-		*dst = *src;
-		dst++;
-		src++;
-		i++;
-	}
-	*dst = 0;
-	return (lensrc);
-}
-
 char	*ft_strchr(const char *s, int c)
 {
 	char	new_c;
 
+	if (s == NULL)
+		return((void *) 0);
 	new_c = c + '\0';
 	while (*s)
 	{
@@ -142,4 +110,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	new_s = write_s(new_s, s, len);
 	return (new_s);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		return ;
+	while (i < n)
+	{
+		*(char *)s = '\0';
+		s++;
+		i++;
+	}
+	return ;
 }

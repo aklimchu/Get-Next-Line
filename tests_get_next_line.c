@@ -36,7 +36,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	i = 0;
-	while (i < 1)
+	while (i < 5)
 	{
 		printf("%s", get_next_line(fd));
 		i++;

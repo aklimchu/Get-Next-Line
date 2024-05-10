@@ -19,10 +19,9 @@
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *c);
-size_t	checknew(char c, char const *set);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *s, int c);
 char	*write_s(char *new_s, char const *s, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	ft_bzero(void *s, size_t n);
 
 #endif /* GET_NEXT_LINE_H */
