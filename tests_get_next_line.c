@@ -6,7 +6,7 @@
 /*   By: aklimchu <aklimchu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 08:28:53 by aklimchu          #+#    #+#             */
-/*   Updated: 2024/05/13 15:45:20 by aklimchu         ###   ########.fr       */
+/*   Updated: 2024/05/14 08:36:45 by aklimchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	i = 0;
-	while (i < 5)
+	while (i < 14)
 	{
 		nl = get_next_line(fd);
 		printf("%s", nl);

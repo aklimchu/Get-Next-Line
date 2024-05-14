@@ -6,7 +6,7 @@
 /*   By: aklimchu <aklimchu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:07:02 by aklimchu          #+#    #+#             */
-/*   Updated: 2024/05/13 15:44:01 by aklimchu         ###   ########.fr       */
+/*   Updated: 2024/05/14 09:43:24 by aklimchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	new_s = write_s(new_s, s, len);
-	//free((char *)s - start);	//mod
-	//s = NULL;	//mod
 	return (new_s);
 }
 
@@ -148,7 +146,7 @@ char	*ft_strdup(const char *s1)
 		arr++;
 		s1++;
 	}
-	*arr = 0;
+	*arr = '\0';
 	return (arr - slen);
 }
 
@@ -205,7 +203,8 @@ char	*trim_stash(char *s)
 	new_s = (char *)malloc(newlen + 1);
 	while (*s != '\n' && *s)
 		s++;
-	s++;
+	if (*s)
+		s++;
 	while (*s)
 	{
 		*new_s = *s;
