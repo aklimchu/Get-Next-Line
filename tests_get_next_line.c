@@ -6,7 +6,7 @@
 /*   By: aklimchu <aklimchu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 08:28:53 by aklimchu          #+#    #+#             */
-/*   Updated: 2024/05/08 15:27:36 by aklimchu         ###   ########.fr       */
+/*   Updated: 2024/05/13 15:45:20 by aklimchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char *argv[])
 {
 	int		fd;
 	int		i;
+	char	*nl;
 
 	if (argc < 2)
 	{
@@ -38,7 +39,10 @@ int	main(int argc, char *argv[])
 	i = 0;
 	while (i < 5)
 	{
-		printf("%s", get_next_line(fd));
+		nl = get_next_line(fd);
+		printf("%s", nl);
+		if (nl)
+			free(nl);
 		i++;
 	}
 	close(fd);
