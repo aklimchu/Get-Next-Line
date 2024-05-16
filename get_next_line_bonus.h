@@ -6,7 +6,7 @@
 /*   By: aklimchu <aklimchu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:04:18 by aklimchu          #+#    #+#             */
-/*   Updated: 2024/05/15 14:11:36 by aklimchu         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:59:06 by aklimchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #  define BUFFER_SIZE 1024
 # endif
 
-# define MAX_FD 1024
+# define MAX_FD 256
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *c);

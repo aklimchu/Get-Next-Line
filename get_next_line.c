@@ -6,7 +6,7 @@
 /*   By: aklimchu <aklimchu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:21:22 by aklimchu          #+#    #+#             */
-/*   Updated: 2024/05/15 14:08:13 by aklimchu         ###   ########.fr       */
+/*   Updated: 2024/05/16 10:31:09 by aklimchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stash = NULL;
+	static char	*stash;
 
-	if (BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX \
-			|| fd < 0 || read(fd, 0, 0) < 0)
+	if (BUFFER_SIZE <= 0 || fd < 0 || read(fd, 0, 0) < 0)
 		return (free_mem(&stash, NULL));
 	line = NULL;
 	stash = read_file(fd, stash);
