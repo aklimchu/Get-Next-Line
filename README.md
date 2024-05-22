@@ -1,4 +1,4 @@
-# ft_printf
+# get_next_line
 The goal of the project was to program a function that returns a line read from a file descriptor.
 I had a maximum limit of helper functions (10) and their length was also limited (25 ines max).
 The goal of the bonus part was to program a funtion that can manage multiple file descriptors at the same time.
