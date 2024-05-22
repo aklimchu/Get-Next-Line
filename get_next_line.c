@@ -6,11 +6,16 @@
 /*   By: aklimchu <aklimchu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:21:22 by aklimchu          #+#    #+#             */
-/*   Updated: 2024/05/16 10:31:09 by aklimchu         ###   ########.fr       */
+/*   Updated: 2024/05/22 09:56:41 by aklimchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+// The function received a file descriptor for the file to be open.
+// Then it calls "read_file" to read the file and puts the result
+// to the static variable "stash".
+// After that "line" is extracted from "stash" and returned to the user.
 
 char	*get_next_line(int fd)
 {
@@ -40,6 +45,12 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
+// The function allocates the buffer and reads from the file pointed
+// by the file descriptor.
+// After that needed amount of memory is allocated to variable "stash"
+// using the function add_memory.
+// Data from the buffer is copied to "stash" using ft_strncat.
+
 char	*read_file(int fd, char *stash)
 {
 	char		*buffer;
@@ -65,6 +76,8 @@ char	*read_file(int fd, char *stash)
 	return (stash);
 }
 
+// The function frees the memory and sets the pointers to NULL.
+
 char	*free_mem(char **stash, char *buffer)
 {
 	if (*stash)
@@ -75,6 +88,9 @@ char	*free_mem(char **stash, char *buffer)
 	buffer = NULL;
 	return ((void *) 0);
 }
+
+// The function frees the old "stash" and allocates new
+// memory depending on the number of bytes read in read_file.
 
 char	*add_memory(char *stash, size_t i)
 {
@@ -99,6 +115,11 @@ char	*add_memory(char *stash, size_t i)
 	free(stash - slen);
 	return (temp - slen);
 }
+
+// The function frees old "stash" and allocates new memory
+// depending on the number of characters left after '\n'
+// character.
+// These characters are also copied to newly allocated "stash".
 
 char	*trim_stash(char *s)
 {

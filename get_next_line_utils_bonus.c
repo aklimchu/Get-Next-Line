@@ -6,12 +6,14 @@
 /*   By: aklimchu <aklimchu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:07:02 by aklimchu          #+#    #+#             */
-/*   Updated: 2024/05/14 14:58:25 by aklimchu         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:09:11 by aklimchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 #include <errno.h>
+
+// The function implements the same behaviour as strlen from libc.
 
 size_t	ft_strlen(const char *c)
 {
@@ -25,6 +27,8 @@ size_t	ft_strlen(const char *c)
 	}
 	return (i);
 }
+
+// The function implements the same behaviour as strchr from libc.
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -43,6 +47,10 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) s);
 	return ((void *) 0);
 }
+
+// The function allocates (with malloc(3)) and returns a substring
+// from the string ’s’.
+// The substring begins at index ’start’ and is of maximum size ’len’.
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -71,6 +79,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (new_s);
 }
 
+// The function implements the same behaviour as strdup from libc.
+
 char	*ft_strdup(const char *s1)
 {
 	char	*arr;
@@ -92,6 +102,8 @@ char	*ft_strdup(const char *s1)
 	*arr = '\0';
 	return (arr - slen);
 }
+
+// The function implements the same behaviour as strncat from libc.
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
